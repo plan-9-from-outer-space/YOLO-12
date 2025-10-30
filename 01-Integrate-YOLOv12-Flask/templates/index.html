@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection</title>
+    <!-- Link to the CSS File -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Add Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main Page -->
+    <div class="main-page">
+        <!-- Side Line -->
+        <div class="side-line"></div>
+        <!-- Side Bar -->
+        <div class="side-bar">
+            <label for="fileInput" class="circle" style="cursor: pointer;">
+                <i class="material-icons" style="font-size: 36px; color: white;">cloud_upload</i>
+            </label>
+            <input type="file" name="file" id="fileInput" style="display: none;">
+            <span class="circle" id="button-gray-scale"><i class="material-icons" style="font-size: 36px; color: white;">contrast</i></span>
+            <span class="circle" id="button-blur"><i class="material-icons" style="font-size: 36px; color: white;">blur_on</i></span>
+            <span class="circle" id="button-canny-image"><i class="material-icons" style="font-size: 36px; color: white;">grade</i></span>
+            <span class="circle blue-circle"><i class="material-icons" style="font-size: 36px; color: white;">videocam</i></span>
+        </div>
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <!-- Header -->
+            <div class="header">
+                <div class="empty-container"></div>
+                <h1>Object Detection</h1>
+                <div class="logo-container"><img src="{{ url_for('static', filename='images/logo.png') }}" width="90" height="30" alt=""></div>
+            </div>
+            <!-- Tablet Container -->
+            <div class="tablets-wrapper">
+                <!-- First Tablet -->
+                <div class="tablet-container">
+                    <img id="tablet-image1" src="{{ url_for('static', filename='images/tablet.png') }}" alt="">
+                    <canvas id="main-canvas1"></canvas>
+                </div>
+                <!-- Second Tablet -->
+                <div class="tablet-container">
+                    <img id="tablet-image2" src="{{ url_for('static', filename='images/tablet.png') }}" alt="">
+                    <canvas id="main-canvas2"></canvas>
+                </div>
+            </div>
+            <!-- Chart Section-->
+            <div class="chart-container">
+                <canvas id="line-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the JS File -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
